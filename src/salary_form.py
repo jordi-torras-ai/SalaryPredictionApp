@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request
 import joblib
+import os
 
 # Load the saved model
 model = joblib.load('../model/Salary_model.pkl')
 
-# Initialize the Flask application
-app = Flask(__name__)
+# Set the template folder to the new path
+template_dir = os.path.abspath('../templates')
+
+# Initialize the Flask application with the custom template folder
+app = Flask(__name__, template_folder=template_dir)
 
 # Define the home route to show the input form
 @app.route("/", methods=["GET", "POST"])
