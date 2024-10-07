@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Predicted Salary</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+   <title>Predicted Salary</title>
 </head>
 <body>
     <h1>Predicted Salary</h1>
-    <p>The predicted salary for <strong>{{ years_experience }}</strong> years of experience is: <strong>${{ salary }}</strong></p>
+    <p>The predicted salary for <strong>{{ years_experience }}</strong> years of experience is: 
+    <strong>${{ "{:,.2f}".format(salary) }}</strong></p>
     <a href="/">Predict Again</a>
 </body>
 </html>
